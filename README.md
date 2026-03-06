@@ -2,7 +2,7 @@
 
 *See what's been happening in your codebase at a glance.*
 
-A CLI that parses your git history to surface the most active files and themes in a codebase; zero dependencies, zero config.
+A CLI that parses git history to surface the most active files and themes in a codebase; zero dependencies, zero config.
 
 
 ## Usage
