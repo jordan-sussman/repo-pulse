@@ -1,8 +1,24 @@
 # repo-pulse
+*See what's been happening in your codebase at a glance.*
 
-> See what's been happening in your codebase at a glance.
+A CLI that parses your git history to surface the most active files and themes in a codebase; zero dependencies, zero config.
 
-A zero-dependency CLI that parses your git history to surface the most active files and themes in a codebase.
+
+## Usage
+
+Run from any git repository:
+
+```bash
+python3 repo_pulse.py
+```
+
+Or run from outside the repository by passing the path:
+
+```bash
+cd ~/projects/my-app
+python3 ~/downloads/repo-pulse/repo_pulse.py
+```
+
 
 ## Example output
 
@@ -49,20 +65,7 @@ A zero-dependency CLI that parses your git history to surface the most active fi
 ────────────────────────────────────────────────────────────
 ```
 
-## Requirements
-
-- Python 3.9+
-- git
-
-## Usage
-
-Run from any git repository:
-
-```bash
-python3 repo_pulse.py
-```
-
-### Examples
+### Examples using options
 
 ```bash
 python3 repo_pulse.py --flat
@@ -72,13 +75,6 @@ python3 repo_pulse.py --dir src/api
 python3 repo_pulse.py --ignore-files "docs,generated"
 python3 repo_pulse.py --no-themes
 python3 repo_pulse.py --themes 15 --ignore-themes "utils,config"
-```
-
-You can also run from anywhere by passing the full path to the script:
-
-```bash
-cd ~/projects/my-app
-python3 ~/Downloads/repo-pulse/repo_pulse.py
 ```
 
 ## Options
@@ -114,4 +110,9 @@ score = (commits / max_commits) × 0.7 + (lines_changed / max_lines) × 0.3
 
 This means a file touched in many small commits will rank higher than a file with one large change. Frequent edits are a stronger signal of a hotspot than raw line count, but a file with massive churn still gets a boost from the volume component.
 
-The heat indicators (🔴 🟡 🟢 🔵) are based on score quartiles — the top 25% of files are red, the next 25% yellow, and so on.
+The heat indicators (🔴 🟡 🟢 🔵) are based on score quartiles: top 25% of files are red, next 25% yellow, and so on.
+
+## Requirements
+
+- Python 3.9+
+- git
