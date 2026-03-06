@@ -1,4 +1,5 @@
-# repo-pulse
+# repo-pulse <img width="50" height="30" alt="pulse-icon" src="https://github.com/user-attachments/assets/1ad5aaed-64c7-4836-b7f8-7386d0f90ec0" />
+
 *See what's been happening in your codebase at a glance.*
 
 A CLI that parses your git history to surface the most active files and themes in a codebase; zero dependencies, zero config.
