@@ -109,9 +109,7 @@ Both values are normalized against the most active file in the result set, so sc
 score = (commits / max_commits) × 0.7 + (lines_changed / max_lines) × 0.3
 ```
 
-This means a file touched in many small commits will rank higher than a file with one large change. Frequent edits are a stronger signal of a hotspot than raw line count, but a file with massive churn still gets a boost from the volume component.
-
-The heat indicators (🔴 🟡 🟢 🔵) are based on score quartiles: top 25% of files are red, next 25% yellow, and so on.
+This means a file touched in many small commits will rank higher than a file with one large change. Frequent edits are a stronger signal of a hotspot than raw line count, but a file with massive churn still gets a boost from the volume component. Color heat indicators reflect score quartiles; red 'high' is top 25%, down to blue 'minimal' for the bottom 25%.
 
 ## Requirements
 
